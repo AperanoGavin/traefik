@@ -24,11 +24,10 @@ services:
       - db_traefik
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.web_traefik.rule=Host(`46.226.107.16`)"
+      - "traefik.http.routers.web_traefik.rule=Host(`http://gavinaperano.com`)"
       - "traefik.http.routers.web_traefik.entrypoints=web"
       - "traefik.http.routers.web_traefik.service=web_traefik"
       - "traefik.http.services.web_traefik.loadbalancer.server.port=9680"
-      - "traefik.http.routers.web_traefik.entrypoints=http"
   db_traefik:
     image: mariadb
     environment:
